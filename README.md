@@ -16,6 +16,7 @@ git checkout -b task[task_num]
 Note: Replace [task_num] with the specific task number (e.g., task1)
 ## 2. Commit your changes
 git add .
+
 git commit -m "Describe the changes made for task[task_num]"
 ## 3. Push your branch to the remote repository
 git push origin task[task_num]
