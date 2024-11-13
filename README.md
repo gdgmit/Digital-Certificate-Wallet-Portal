@@ -3,6 +3,7 @@
 git clone https://github.com/gdgmit/Digital-Certificate-Wallet-Portal.git
 ## 2. Pull the latest changes from the main branch
 git checkout main
+
 git pull origin main
 ## 3. Install the dependencies
 npm install
@@ -13,6 +14,7 @@ npm run dev
 After the completion of your tasks,
 ## 1. Create a new branch
 git checkout -b task[task_num]
+
 Note: Replace [task_num] with the specific task number (e.g., task1)
 ## 2. Commit your changes
 git add .
