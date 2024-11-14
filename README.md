@@ -12,8 +12,8 @@ npm run dev
 
 # Task Submission
 After the completion of your tasks,
-## 1. Create a new branch
-git checkout -b task[task_num]
+## 1. Navigate to your branch
+git checkout task[task_num]
 
 Note: Replace [task_num] with the specific task number (e.g., task1)
 ## 2. Commit your changes
