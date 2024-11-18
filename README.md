@@ -16,18 +16,25 @@ git pull origin main
 npm install
 ```
 ## 4. Run the project
+```bash
 npm run dev
-
+```
 # Task Submission
 After the completion of your tasks,
 ## 1. Navigate to your branch
+```bash
 git checkout task[task_num]
-
+```
 Note: Replace [task_num] with the specific task number (e.g., task1)
 ## 2. Commit your changes
+```bash
 git add .
-
+```
+```bash
 git commit -m "Describe the changes made for task[task_num]"
-## 3. Push your branch to the remote repository
+```
+## 3. Push your code to your corresponding branch
+```bash
 git push origin task[task_num]
+```
 ## 4. Create a pull request(PR) to the main branch
