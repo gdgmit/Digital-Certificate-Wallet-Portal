@@ -6,12 +6,15 @@ git clone https://github.com/gdgmit/Digital-Certificate-Wallet-Portal.git
 ## 2. Pull the latest changes from the main branch
 Navigate to the cloned folder,
 ```bash
-git checkout main ```
+git checkout main
+```
 ```bash
-git pull origin main ```
+git pull origin main
+```
 ## 3. Install the dependencies
 ```bash
-npm install ```
+npm install
+```
 ## 4. Run the project
 npm run dev
 
