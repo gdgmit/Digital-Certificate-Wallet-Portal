@@ -1,6 +1,8 @@
 # Project Setup
 ## 1. Clone the repository
+'''bash
 git clone https://github.com/gdgmit/Digital-Certificate-Wallet-Portal.git
+'''
 ## 2. Pull the latest changes from the main branch
 Navigate to the cloned folder,
 
