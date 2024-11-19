@@ -1,12 +1,38 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-const EventCertificateComponent = ({ studentName, eventName, date, scale = 1.5 }) => {
-  console.log(studentName, eventName, date);
+const EventCertificateComponent = ({ studentName, eventName, date }) => {
+  const [scale, setScale] = useState(1);
+  const certificateRef = useRef(null);
+
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver(() => {
+      if (certificateRef.current) {
+        const parentWidth = certificateRef.current.parentElement.offsetWidth;
+        const certificateWidth = certificateRef.current.offsetWidth;
+        const newScale = parentWidth / certificateWidth;
+        setScale(newScale);
+      }
+    });
+
+    if (certificateRef.current) {
+      resizeObserver.observe(certificateRef.current.parentElement);
+    }
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+
   return (
-    <div className="flex h-[50vh] max-w-[100vw] min-w-[100vw] items-center justify-center relative">
-      
-      <div className="relative w-full max-w-[404px] h-auto flex flex-col items-center justify-center" style={{ transform: `scale(${scale})` }}>
-        <img
+    <div
+      ref={certificateRef}
+      style={{
+        transform: `scale(${scale})`,
+        transformOrigin: "top left",
+      }}
+      className="relative w-full max-w-[404px] h-auto flex flex-col items-center justify-center"
+    >
+      <img
           src="/external/rectangle16449-emxc-400w.png"
           alt="Rectangle16449"
           className="absolute top-0 left-0 w-full h-[280px] border-solid border-[16px] border-[#3a3b4f]"
@@ -132,7 +158,6 @@ const EventCertificateComponent = ({ studentName, eventName, date, scale = 1.5 }
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
