@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const EventCertificateComponent = ({ studentName, eventName, date }) => {
+const EventCertificateComponent = ({ studentName, certificateData }) => {
   const [scale, setScale] = useState(1);
   const certificateRef = useRef(null);
+  const eventName = certificateData.name;
+  const date = certificateData.date;
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
@@ -109,11 +111,11 @@ const EventCertificateComponent = ({ studentName, eventName, date }) => {
         <div className="absolute top-[36.5px] left-[76px] w-[248px] flex flex-col items-center gap-2">
           <div className="flex flex-col items-center gap-10 mt-10">
             <div className="flex flex-col items-center gap-2">
-              <span className="text-[#c6a24d] text-xs font-bold leading-[15px]">
+              <span className="text-[#ffb300] text-xs font-bold leading-[15px]">
                 This is to certify that
               </span>
               <div className="flex flex-col items-center gap-1">
-                <span className="text-[#c6a24d] text-2xl font-bold text-center">
+                <span className="text-[#ffb300] text-2xl font-bold text-center">
                   {studentName}
                 </span>
                 <span className="text-[#1c1c1c] opacity-70 text-xs text-center font-medium leading-[15px]">
@@ -123,7 +125,7 @@ const EventCertificateComponent = ({ studentName, eventName, date }) => {
             </div>
             <div className="flex relative items-start bottom-[10px]">
               <div className="flex flex-col items-start gap-2">
-                <span className="text-[#c6a24d] text-xs font-bold text-center leading-[8px]">
+                <span className="text-[#ffb300] text-xs font-bold text-center leading-[8px]">
                   Event Date: {date}
                 </span>
               </div>

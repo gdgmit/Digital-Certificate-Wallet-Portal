@@ -5,8 +5,9 @@ import NotFoundPage from "./pages/NotFoundPage";
 import CourseCertificateComponent from "./components/CertificateTemplates/CourseCertificateComponent";
 import EventCertificateComponent from "./components/CertificateTemplates/EventCertificateComponent";
 import WorkShopCertificateComponent from "./components/CertificateTemplates/WorkShopCertificateComponent";
-
+import studentsData from "./data/certificate_data.json";
 function App() {
+  
   return (
     <Router>
       <Routes>
@@ -19,22 +20,18 @@ function App() {
 
         // only for testing 
         <Route path="/course" element={<CourseCertificateComponent 
-            studentName="John" 
-            courseName="GenAI Study Jam"
-            date="12-11-2024"
-            skills={["The Basics of Google Cloud Compute","Analyze Images with the Cloud Vision API","Prompt Design in Vertex AI"]}
+            certificateData={studentsData[0].certificates[1]}
+            studentName={studentsData[0].st_name}
             />}
          />
         <Route path="/event" element={<EventCertificateComponent 
-            studentName="John"
-            eventName="Ideathon"
-            date="13-11-2024"
+            studentName={studentsData[1].st_name}
+            certificateData={studentsData[1].certificates[0]}
             />} 
         />
         <Route path="/workshop" element={<WorkShopCertificateComponent 
-            studentName="John" 
-            workshopName="Web Development Workshop" 
-            date="14-11-2024" 
+            studentName={studentsData[0].st_name} 
+            certificateData={studentsData[0].certificates[0]}
           />
           } 
         />

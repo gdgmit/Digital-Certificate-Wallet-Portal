@@ -1,8 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const CourseCertificateComponent = ({ studentName, courseName, date, skills }) => {
+const CourseCertificateComponent = ({ studentName, certificateData }) => {
   const [scale, setScale] = useState(1);
   const certificateRef = useRef(null);
+  const courseName = certificateData.name;
+  const date = certificateData.date;
+  const skills = certificateData.skills;
+
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {

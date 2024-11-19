@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const WorkShopCertificateComponent = ({ studentName, workshopName, date }) => {
+const WorkShopCertificateComponent = ({ studentName,certificateData }) => {
   const [scale, setScale] = useState(1);
   const certificateRef = useRef(null);
+  const workshopName = certificateData.name;
+  const date = certificateData.date;
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
@@ -167,7 +169,7 @@ const WorkShopCertificateComponent = ({ studentName, workshopName, date }) => {
                   style={{
                     fontFamily: "BrushScriptMT",
                     fontStyle: "italic",
-                    color: "rgba(190,154,69,1)",
+                    color: "#ffb300",
                   }}
                 >
                   {studentName}
@@ -191,7 +193,7 @@ const WorkShopCertificateComponent = ({ studentName, workshopName, date }) => {
                 <span
                   className="w-[200px] opacity-[0.80] text-xs font-normal text-center leading-[10px]"
                   style={{
-                    color: "rgba(190, 154, 69, 1)",
+                    color: "#ffb300",
                     fontFamily: "Rockwell",
                   }}
                 >
