@@ -1,36 +1,45 @@
 [
     {
         "st_id": 1,
-        "st_name": "John",
-        "regno": 1234,
-        "dept": "CT",
+        "st_name": "John Doe",
+        "regno": 2021501001,
+        "dept": "Computer Technology",
+        "year": "2nd Year",
         "certificates": [
             {
                 "cert_id": 1,
                 "category": "workshop",
                 "name": "Web Development Workshop",
-                "date": "14-11-2024"
+                "date": "14-11-2024",
+                "description": "A hands-on workshop focused on building dynamic websites and interactive web applications."
             },
             {
                 "cert_id": 2,
                 "category": "course",
                 "name": "GenAI Study Jam",
                 "date": "12-11-2024",
-                "skills":["The Basics of Google Cloud Compute","Analyze Images with the Cloud Vision API","Prompt Design in Vertex AI"]
+                "skills": [
+                    "The Basics of Google Cloud Compute",
+                    "Analyze Images with the Cloud Vision API",
+                    "Prompt Design in Vertex AI"
+                ],
+                "description": "A course emphasizing practical applications of Generative AI tools and Google Cloud technologies."
             }
         ]
     },
     {
         "st_id": 2,
         "st_name": "Michael",
-        "regno": 5678,
-        "dept": "IT",
+        "regno": 2022501002,
+        "dept": "information Technology",
+        "year": "2nd Year",
         "certificates": [
             {
                 "cert_id": 3,
                 "category": "event",
                 "name": "Ideathon",
-                "date": "13-11-2024"
+                "date": "13-11-2024",
+                "description": "This event fostered creative problem-solving and encouraged innovative thinking, where participants collaborated to propose impactful solutions to real-world challenges."
             }
         ]
     }
