@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const CourseCertificateComponent = ({ studentName, certificateData }) => {
+const CourseCertificateComponent = ({ studentName, regno, year, dept, certificateData }) => {
   const [scale, setScale] = useState(1);
   const certificateRef = useRef(null);
   const courseName = certificateData.name;
@@ -52,8 +52,8 @@ const CourseCertificateComponent = ({ studentName, certificateData }) => {
           className="absolute w-[386px] h-[142px]"
         />
       </div>
-      <span className="absolute top-[24px] left-[16px] text-white w-[200px] text-[18px] font-semibold tracking-tight font-[Bahnschrift] leading-[18px]">
-        {courseName}
+      <span className="absolute top-[24px] left-[16px] text-white w-[240px] text-[18px] font-semibold tracking-tight font-[Bahnschrift] leading-[18px]">
+        CERTIFICATE OF COMPLETION
       </span>
       <div className="absolute bottom-[4px] left-[45px] w-[280px] flex flex-col items-center">
         <div className="flex flex-col items-center">
@@ -61,20 +61,17 @@ const CourseCertificateComponent = ({ studentName, certificateData }) => {
             This is to certify that
           </span>
           <div className="flex flex-col items-center gap-[4px]">
-            <span className="text-[#1c1c1c] text-[20px] font-medium">
+            <span className="text-[#1c1c1c] text-[25px] font-semibold font-greatVibes">
               {studentName}
             </span>
-            <span className="text-[#1c1c1c] text-[8px] opacity-80 leading-[10px] text-center">
-              has successfully completed the course 
+            <span className="text-[#616161] text-[7px] leading-[9.5px] text-center block mt-[3px]">
+            {studentName} (Reg No: {regno}), a {year} student of the Department of {dept}, has successfully completed the  
+<span className='text-[#1c1c1c] font-medium opacity-100 font-serif'> "GenAI Study Jam" </span>  
+on <span className='text-[#1c1c1c] font-medium opacity-100'> 12-11-2024</span>.
             </span>
           </div>
         </div>
-        <div className="flex flex-col">
-          <span className="text-[#1c1c1c] text-[8px] leading-[12px] text-center">
-            Completion Date: {date}
-          </span>
-        </div>
-        <div className="flex flex-col gap-[10px] mt-[10px] items-center">
+        <div className="flex flex-col gap-[10px] mt-[8px] items-center">
           <span className="text-[#1c1c1c] text-[8px] leading-[12px] text-center font-medium">
             Skills Acquired:
           </span>
@@ -90,29 +87,16 @@ const CourseCertificateComponent = ({ studentName, certificateData }) => {
           </div>
         </div>
       </div>
-      <div className="absolute top-[32px] right-[16px] flex">
-        <div className="relative top-10 left-[65.5px] w-[50px] h-[70px]">
-          <img
-            src="/external/subtract6449-ebpi.svg"
-            alt="Seal Decoration"
-            className="absolute w-full h-full"
-          />
-        </div>
-        <div className="relative w-[80px] h-[77px]">
-          <img
-            src="\external\kisspnggoldsealgoldmedal5a8f4b8c92929616447-lzb5-200h.png"
-            alt="Seal"
-            className="absolute w-full h-full"
-          />
-          <span className="absolute top-[22.87px] left-[18.5px] text-[#1c1c1c] text-[10px] italic font-[Brush Script MT] leading-[12px] text-center">
-            <span className="flex flex-col items-center justify-center text-[0.5rem]">
+      <div className="absolute top-[18px] right-0 flex scale-90">
+        <div className="relative w-[100px] h-auto">
+          <span className="absolute top-[18.87px] left-[7.5px] text-[#1c1c1c] text-[10px] italic font-[Brush Script MT] leading-[12px] text-center">
+            <span className="flex flex-col items-center justify-center">
               <span
                 dangerouslySetInnerHTML={{
                   __html:
-                    '<img src="/external/images/gdg_logo.png" alt="GDG Logo" class="w-5 h-5" />',
+                    '<img src="/external/images/GDG-oC-MIT-logo.png" alt="GDG Logo" class="w-[200px]" />',
                 }}
               />
-              Certification
             </span>
           </span>
         </div>

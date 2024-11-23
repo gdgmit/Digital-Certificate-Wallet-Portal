@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const WorkShopCertificateComponent = ({ studentName,certificateData }) => {
+const WorkShopCertificateComponent = ({ studentName, regno, dept, year, certificateData }) => {
   const [scale, setScale] = useState(1);
   const certificateRef = useRef(null);
   const workshopName = certificateData.name;
@@ -135,7 +135,7 @@ const WorkShopCertificateComponent = ({ studentName,certificateData }) => {
         alt="Polygon168312"
         className="absolute top-[196.37px] left-[63.08px] w-[20px] h-[17px]"
       />
-      <div className="absolute gap-4 top-[43.5px] left-[80px] w-[240px] flex items-center flex-col">
+      <div className="absolute gap-4 top-[23.5px] left-[60px] w-[280px] flex items-center flex-col">
         <span
           style={{
             color: "rgba(43, 102, 104, 1)",
@@ -164,14 +164,7 @@ const WorkShopCertificateComponent = ({ studentName,certificateData }) => {
             </span>
             <div className="flex items-center flex-col gap-[16px]">
               <div className="flex items-center flex-col">
-                <span
-                  className="text-[32px] text-center leading-[32px]"
-                  style={{
-                    fontFamily: "BrushScriptMT",
-                    fontStyle: "italic",
-                    color: "#ffb300",
-                  }}
-                >
+                <span className="text-[32px] text-center leading-[32px] font-greatVibes text-[#ffb300]">
                   {studentName}
                 </span>
                 <img
@@ -180,25 +173,31 @@ const WorkShopCertificateComponent = ({ studentName,certificateData }) => {
                   className="w-[160px] h-[1px]"
                 />
               </div>
-              <div className="gap-[4px] flex items-center flex-col">
+              <div className="gap-[20px] flex items-center flex-col">
                 <span
-                  className="w-[240px] opacity-[0.80] text-[10px] font-normal text-center"
                   style={{
                     color: "rgba(2, 105, 110, 1)",
-                    fontFamily: "Rockwell",
+                    fontFamily: "BR Firma",
                   }}
+                  className="text-[7px] font-medium text-center"
                 >
-                  Has attended
-                </span>
+                  {studentName} (Reg No: {regno}), a {year} student of the Department of {dept},  
+has actively participated in the 
                 <span
-                  className="w-[200px] opacity-[0.80] text-xs font-normal text-center leading-[10px]"
+                  className="opacity-[0.80] text-[#ffb300]"
                   style={{
-                    color: "#ffb300",
                     fontFamily: "Rockwell",
                   }}
                 >
-                  {workshopName}
+                  {" "} {workshopName} { " "}
                 </span>
+                conducted on {date}.
+              </span>
+              <span
+                className="text-[15px] text-center font-silentha leading-[15px] opacity-60 text-[rgba(18,18,18,1)] font-medium"
+              >
+                {certificateData.description}
+              </span>
               </div>
             </div>
           </div>
@@ -209,29 +208,19 @@ const WorkShopCertificateComponent = ({ studentName,certificateData }) => {
                 alt="Line18311"
                 className="w-[80px] h-[1px]"
               />
-              <span
-                style={{
-                  color: "rgba(2, 105, 110, 1)",
-                  fontFamily: "BR Firma",
-                }}
-                className="text-[6px] font-medium text-center"
-              >
-                Workshop Date: {date}
-              </span>
             </div>
           </div>
         </div>
-        <div className="absolute top-[2px] right-[-80px] flex">
-          <div className="relative w-[80px] h-[77px]">
-            <span className="absolute top-[22.87px] left-[18.5px] text-[#1c1c1c] text-[10px] italic font-[Brush Script MT] leading-[12px] text-center">
-              <span className="flex flex-col items-center justify-center text-[0.5rem]">
+        <div className="absolute top-[20px] right-[-45px] flex">
+          <div className="relative w-[90px] h-auto">
+            <span className="absolute text-[#1c1c1c] text-[10px] italic font-[Brush Script MT] leading-[12px] text-center">
+              <span className="flex flex-col items-center justify-center">
                 <span
                   dangerouslySetInnerHTML={{
                     __html:
-                      '<img src="/external/images/gdg_logo.png" alt="GDG Logo" class="w-5 h-5" />',
+                      '<img src="/external/images/GDG-oC-MIT-logo.png" alt="GDG Logo" class="w-full" />',
                   }}
                 />
-                Certification
               </span>
             </span>
           </div>
