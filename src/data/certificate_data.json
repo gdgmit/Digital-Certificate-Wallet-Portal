@@ -7,14 +7,14 @@
         "year": "2nd Year",
         "certificates": [
             {
-                "cert_id": 1,
+                "cert_id": "GDG-MIT-37d5ca07-bb19-4b5b-9bf4-d6f30a2222ae",
                 "category": "workshop",
                 "name": "Web Development Workshop",
                 "date": "14-11-2024",
                 "description": "A hands-on workshop focused on building dynamic websites and interactive web applications."
             },
             {
-                "cert_id": 2,
+                "cert_id": "GDG-MIT-cbc38607-38ce-4a47-ae57-f0dc95fa5689",
                 "category": "course",
                 "name": "GenAI Study Jam",
                 "date": "12-11-2024",
@@ -35,7 +35,7 @@
         "year": "2nd Year",
         "certificates": [
             {
-                "cert_id": 3,
+                "cert_id": "GDG-MIT-8e2f3b79-a6cd-4325-b4f6-14d8c8ef95a2",
                 "category": "event",
                 "name": "Ideathon",
                 "date": "13-11-2024",
