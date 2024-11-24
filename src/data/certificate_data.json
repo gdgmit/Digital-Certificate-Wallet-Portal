@@ -1,36 +1,45 @@
 [
     {
         "st_id": 1,
-        "st_name": "John",
-        "regno": 1234,
-        "dept": "CT",
+        "st_name": "John Doe",
+        "regno": 2021501001,
+        "dept": "Computer Technology",
+        "year": "2nd Year",
         "certificates": [
             {
-                "cert_id": 1,
+                "cert_id": "GDG-MIT-37d5ca07-bb19-4b5b-9bf4-d6f30a2222ae",
                 "category": "workshop",
                 "name": "Web Development Workshop",
-                "date": "14-11-2024"
+                "date": "14-11-2024",
+                "description": "A hands-on workshop focused on building dynamic websites and interactive web applications."
             },
             {
-                "cert_id": 2,
+                "cert_id": "GDG-MIT-cbc38607-38ce-4a47-ae57-f0dc95fa5689",
                 "category": "course",
                 "name": "GenAI Study Jam",
                 "date": "12-11-2024",
-                "skills":["The Basics of Google Cloud Compute","Analyze Images with the Cloud Vision API","Prompt Design in Vertex AI"]
+                "skills": [
+                    "The Basics of Google Cloud Compute",
+                    "Analyze Images with the Cloud Vision API",
+                    "Prompt Design in Vertex AI"
+                ],
+                "description": "A course emphasizing practical applications of Generative AI tools and Google Cloud technologies."
             }
         ]
     },
     {
         "st_id": 2,
         "st_name": "Michael",
-        "regno": 5678,
-        "dept": "IT",
+        "regno": 2022501002,
+        "dept": "information Technology",
+        "year": "2nd Year",
         "certificates": [
             {
-                "cert_id": 3,
+                "cert_id": "GDG-MIT-8e2f3b79-a6cd-4325-b4f6-14d8c8ef95a2",
                 "category": "event",
                 "name": "Ideathon",
-                "date": "13-11-2024"
+                "date": "13-11-2024",
+                "description": "This event fostered creative problem-solving and encouraged innovative thinking, where participants collaborated to propose impactful solutions to real-world challenges."
             }
         ]
     }

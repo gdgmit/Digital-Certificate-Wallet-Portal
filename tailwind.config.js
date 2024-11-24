@@ -5,6 +5,8 @@ export default {
       fontFamily: {
         cursive: ['Pinyon Script', 'cursive'],
         sans: ['Open Sans', 'sans-serif'],
+        silentha: ['Silentha', 'sans-serif'],
+        greatVibes: ['Great Vibes', 'cursive'],
       },
     },
   },
