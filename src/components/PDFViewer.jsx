@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Spinner } from "react-bootstrap";
+import { Card, Spinner, Button } from "react-bootstrap";
 import { Document, Page, pdfjs } from "react-pdf";
 
 // Set the workerSrc property to the location of the pdf.worker.js file
@@ -17,8 +17,17 @@ const PDFViewer = () => {
   };
 
   const onLoadError = (error) => {
+    console.error("Error loading PDF: ", error);
     setError(error);
     setLoading(false);
+  };
+
+  const goToPreviousPage = () => {
+    setPageNumber((prevPage) => Math.max(prevPage - 1, 1));
+  };
+
+  const goToNextPage = () => {
+    setPageNumber((prevPage) => Math.min(prevPage + 1, numPages));
   };
 
   return (
@@ -37,7 +46,15 @@ const PDFViewer = () => {
           </Document>
         )}
         {!loading && numPages && (
-          <p>Page {pageNumber} of {numPages}</p>
+          <div>
+            <p>Page {pageNumber} of {numPages}</p>
+            <Button onClick={goToPreviousPage} disabled={pageNumber <= 1}>
+              Previous
+            </Button>
+            <Button onClick={goToNextPage} disabled={pageNumber >= numPages}>
+              Next
+            </Button>
+          </div>
         )}
       </Card.Body>
     </Card>

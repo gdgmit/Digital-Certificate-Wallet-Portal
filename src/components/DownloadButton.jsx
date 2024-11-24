@@ -23,14 +23,15 @@ function DownloadButtons() {
   };
 
   return (
-    <div className="d-flex justify-content-center">
-      <Button variant="primary " className="mr-2" onClick={handleDownloadPDF}>
-        Download PDF
-      </Button>
-      <Button variant="secondary " className="mr-2" onClick={handleDownloadPNG}>
-        Download PNG
-      </Button>
-    </div>
+   <div className="d-flex justify-content-center">
+  <Button variant="primary" className="mx-2" onClick={handleDownloadPDF}>
+    Download PDF
+  </Button>
+  <Button variant="secondary" className="mx-2" onClick={handleDownloadPNG}>
+    Download PNG
+  </Button>
+</div>
+
   );
 };
 
