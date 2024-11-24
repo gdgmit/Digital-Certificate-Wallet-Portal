@@ -1,64 +1,73 @@
-import React, { useState } from "react";
-import { Card, Spinner, Button } from "react-bootstrap";
-import { Document, Page, pdfjs } from "react-pdf";
-
-// Set the workerSrc property to the location of the pdf.worker.js file
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+import { useState } from "react";
+import { Document, Page } from "react-pdf";
 
 const PDFViewer = () => {
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [numPages, setNumPages] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
-  const onDocumentLoadSuccess = ({ numPages }) => {
+  function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
-    setLoading(false);
-  };
-
-  const onLoadError = (error) => {
-    console.error("Error loading PDF: ", error);
-    setError(error);
-    setLoading(false);
-  };
-
-  const goToPreviousPage = () => {
-    setPageNumber((prevPage) => Math.max(prevPage - 1, 1));
-  };
-
-  const goToNextPage = () => {
-    setPageNumber((prevPage) => Math.min(prevPage + 1, numPages));
-  };
+  }
 
   return (
-    <Card className="mb-4">
-      <Card.Body>
-        <h5 className="card-title">PDF Viewer</h5>
-        {loading && <Spinner animation="border" />}
-        {error && <div>Error loading PDF: {error.message}</div>}
-        {!loading && !error && (
+    <div style={styles.container}>
+      <button style={styles.button} onClick={() => setIsVisible(!isVisible)}>
+        {isVisible ? "Hide PDF" : "View PDF"}
+      </button>
+      {isVisible && (
+        <div style={styles.pdfContainer}>
           <Document
-            file="/webDeveloping.pdf" // Adjust this path if necessary
+            file="/webDeveloping.pdf"
             onLoadSuccess={onDocumentLoadSuccess}
-            onLoadError={onLoadError}
           >
-            <Page pageNumber={pageNumber} />
+            {Array.from({ length: numPages }, (_, index) => (
+              <Page
+                key={`page_${index + 1}`}
+                pageNumber={index + 1}
+                renderAnnotationLayer={false}
+                renderTextLayer={false}
+              />
+            ))}
           </Document>
-        )}
-        {!loading && numPages && (
-          <div>
-            <p>Page {pageNumber} of {numPages}</p>
-            <Button onClick={goToPreviousPage} disabled={pageNumber <= 1}>
-              Previous
-            </Button>
-            <Button onClick={goToNextPage} disabled={pageNumber >= numPages}>
-              Next
-            </Button>
-          </div>
-        )}
-      </Card.Body>
-    </Card>
+          <p>Total Pages: {numPages}</p>
+        </div>
+      )}
+    </div>
   );
+};
+
+const styles = {
+  container: {
+    position: "relative",
+    height: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    backgroundColor: "#f4f4f4",
+  },
+  button: {
+    position: "absolute",
+    top: "10px",
+    right: "10px",
+    padding: "10px 20px",
+    backgroundColor: "#007bff",
+    color: "#fff",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontSize: "16px",
+  },
+  pdfContainer: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    padding: "20px",
+    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+    borderRadius: "10px",
+    overflow: "auto",
+  },
 };
 
 export default PDFViewer;
