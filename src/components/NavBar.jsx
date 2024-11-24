@@ -44,10 +44,11 @@ const NavBar = () => {
           <div style={styles.pdfContainer}>
             <PDFViewer />
           </div>
+          <div style={styles.downloadButtons}>
+            <DownloadButtons />
+          </div>
         </div>
       )}
-
-      <DownloadButtons />
     </>
   );
 };
@@ -57,6 +58,7 @@ const styles = {
     position: "relative",
     backgroundColor: "#f4f4f4",
     padding: "20px",
+    minHeight: "100vh",
   },
   closeButton: {
     position: "absolute",
@@ -76,6 +78,11 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     marginTop: "50px", // Adjusted to avoid overlapping with the button
+  },
+  downloadButtons: {
+    marginTop: "20px",
+    display: "flex",
+    justifyContent: "center",
   },
 };
 

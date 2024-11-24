@@ -15,7 +15,9 @@ const PDFViewer = () => {
         {isVisible ? "Hide PDF" : "View PDF"}
       </button>
       {isVisible && (
+        
         <div style={styles.pdfContainer}>
+          <p>Total Pages: {numPages}</p>
           <Document
             file="/webDeveloping.pdf"
             onLoadSuccess={onDocumentLoadSuccess}
@@ -29,7 +31,7 @@ const PDFViewer = () => {
               />
             ))}
           </Document>
-          <p>Total Pages: {numPages}</p>
+          
         </div>
       )}
     </div>
