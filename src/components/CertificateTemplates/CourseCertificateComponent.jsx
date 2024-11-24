@@ -6,6 +6,7 @@ const CourseCertificateComponent = ({ studentName, regno, year, dept, certificat
   const courseName = certificateData.name;
   const date = certificateData.date;
   const skills = certificateData.skills;
+  const id = certificateData.cert_id;
 
 
   useEffect(() => {
@@ -54,6 +55,9 @@ const CourseCertificateComponent = ({ studentName, regno, year, dept, certificat
       </div>
       <span className="absolute top-[24px] left-[16px] text-white w-[240px] text-[18px] font-semibold tracking-tight font-[Bahnschrift] leading-[18px]">
         CERTIFICATE OF COMPLETION
+      </span>
+      <span className="absolute top-[4px] right-[20px] text-[#ffffffaa] text-[6px]">
+        Certificate ID: {id}
       </span>
       <div className="absolute bottom-[4px] left-[45px] w-[280px] flex flex-col items-center">
         <div className="flex flex-col items-center">

@@ -5,6 +5,7 @@ const WorkShopCertificateComponent = ({ studentName, regno, dept, year, certific
   const certificateRef = useRef(null);
   const workshopName = certificateData.name;
   const date = certificateData.date;
+  const id = certificateData.cert_id;
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
@@ -156,6 +157,9 @@ const WorkShopCertificateComponent = ({ studentName, regno, dept, year, certific
         </span>
         <div className="gap-[24px] flex items-end flex-col">
           <div className="flex items-center flex-col gap-[8px]">
+          <span className="absolute top-[-15px] right-[-57px] text-[#ffffffaa] text-[5.5px] font-medium">
+              Certificate ID: {id}
+            </span>
             <span
               className="text-[rgba(18, 18, 18, 1)] opacity-[0.50] text-xs font-semibold text-center leading-normal"
               style={{ fontFamily: "font-BRFirma" }}

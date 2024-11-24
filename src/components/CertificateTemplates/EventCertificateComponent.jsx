@@ -12,6 +12,7 @@ const EventCertificateComponent = ({
   const eventName = certificateData.name;
   const date = certificateData.date;
   const description = certificateData.description;
+  const id = certificateData.cert_id;
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
@@ -86,9 +87,6 @@ const EventCertificateComponent = ({
         alt="Polygon168312"
         className="absolute top-[196.37px] left-[63.08px] w-[20px] h-[17px]"
       />
-      <span className="absolute top-[24px] left-[16px] text-white w-[144px] text-xl font-semibold leading-[14px]">
-        <span className="font-bold">{eventName}</span>
-      </span>
       <div className="absolute top-[220px] left-[20px] w-[360px] h-[40px] flex items-start">
         <div className="absolute top-0 left-0 w-[40px] h-[40px] flex items-start">
           <img
@@ -102,7 +100,7 @@ const EventCertificateComponent = ({
             className="absolute top-[38.97px] left-[0.01px] w-[11px] h-[40px]"
           />
         </div>
-        <div className="absolute top-0 left-[360px] w-[40px] h-[40px] flex items-start">
+        <div className="absolute top-0 left-[360px] w-[20px] h-[40px] flex items-start">
           <img
             src="/external/vector36452-rkk8.svg"
             alt="Vector36452"
@@ -120,6 +118,9 @@ const EventCertificateComponent = ({
           <div className="flex flex-col items-center gap-0">
             <span className="text-[#1c1c1c] opacity-60 text-[13px] font-extrabold leading-[15px]">
               CERTIFICATE OF PARTICIPATION
+            </span>
+            <span className="absolute top-[-15px] left-[-50px] text-[#1c1c1c88] text-[6px] font-medium">
+              Certificate ID: {id}
             </span>
             <span className="text-[#ffb300] text-[0.6rem] font-bold leading-[30px]">
               This certificate is proudly presented to
