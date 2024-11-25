@@ -1,16 +1,21 @@
-import React from "react";
-import NavBar from "./components/NavBar";
-import DownloadButtons from "./components/DownloadButton";
-import PDFViewer from "./components/PDFViewer";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import { Navbar } from "./components/NavBar";
+import { About, Contact, Home, PDFViewer } from "./components/pages";
 
-function App(){
+
+function App() {
   return (
-    <div>
-      <NavBar></NavBar>
-        
-      </div>
-
+    <div className="App">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/my certificates" element={<PDFViewer />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </div>
   );
-};
+}
 
 export default App;
