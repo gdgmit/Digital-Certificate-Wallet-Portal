@@ -3,6 +3,7 @@ import CourseCertificateComponent from "./components/CertificateTemplates/Course
 import EventCertificateComponent from "./components/CertificateTemplates/EventCertificateComponent";
 import WorkShopCertificateComponent from "./components/CertificateTemplates/WorkShopCertificateComponent";
 import studentsData from "./data/certificate_data.json";
+import EditProfile from "./components/dashboard/EditProfile";
 function App() {
   
   return (
@@ -24,6 +25,8 @@ function App() {
           />
           } 
         />
+        <Route path="/dashboard/editprofile/:st_id" element={<EditProfile />} />
+      
       </Routes>
     </Router>
   );

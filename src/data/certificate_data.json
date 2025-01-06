@@ -3,7 +3,11 @@
         "st_id": 1,
         "st_name": "John",
         "regno": 1234,
+        "phone_no":5689784512,
+        "email_id":"john12@gmail.com",
+        "password":"As$89sJ",
         "dept": "CT",
+
         "certificates": [
             {
                 "cert_id": 1,
@@ -24,6 +28,9 @@
         "st_id": 2,
         "st_name": "Michael",
         "regno": 5678,
+        "phone_no":5689784512,
+        "email_id":"michael34@gmail.com",
+        "password":"gfY#f89",
         "dept": "IT",
         "certificates": [
             {
