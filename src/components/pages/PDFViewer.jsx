@@ -11,15 +11,18 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 
 export const PDFViewer = () => {
   const [numPages, setNumPages] = useState(0);
-  const [currentPDF, setCurrentPDF] = useState("/webDeveloping.pdf"); // Default PDF
-
-  const paths = ['/webDeveloping.pdf', '/git-github-reference.pdf'];
+  const [currentFile, setCurrentFile] = useState("/webDeveloping.pdf"); // Default file
+  const paths = [
+    "/webDeveloping.pdf",
+    "/git-github-reference.pdf",
+    "/Sample-PNG-Image.png",
+  ];
 
   // Function to handle file download
-  const handleDownloadPDF = (pdfPath) => {
+  const handleDownloadFile = (filePath) => {
     const link = document.createElement("a");
-    link.href = pdfPath; // Ensure this file exists in your public directory
-    link.setAttribute("download", pdfPath);
+    link.href = filePath; // Ensure this file exists in your public directory
+    link.setAttribute("download", filePath);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -30,16 +33,22 @@ export const PDFViewer = () => {
     setNumPages(numPages);
   };
 
+  // Determine the file type
+  const isPDF = currentFile.endsWith(".pdf");
+  const isImage = currentFile.endsWith(".png") || currentFile.endsWith(".jpg");
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
-      {/* PDF Selection Dropdown */}
+      {/* File Selection Dropdown */}
       <div className="mb-4">
-        <label htmlFor="pdfSelect" className="font-semibold text-lg mr-2">Select a PDF:</label>
+        <label htmlFor="fileSelect" className="font-semibold text-lg mr-2">
+          Select a File:
+        </label>
         <select
-          id="pdfSelect"
+          id="fileSelect"
           className="p-2 border border-gray-300 rounded"
-          value={currentPDF}
-          onChange={(e) => setCurrentPDF(e.target.value)}
+          value={currentFile}
+          onChange={(e) => setCurrentFile(e.target.value)}
         >
           {paths.map((path, index) => (
             <option key={index} value={path}>
@@ -49,27 +58,35 @@ export const PDFViewer = () => {
         </select>
       </div>
 
-      {/* PDF Display Section */}
+      {/* File Display Section */}
       <div className="max-h-96 overflow-y-scroll border border-gray-300 rounded-lg p-4 bg-gray-50">
-        <Document
-          file={currentPDF} // Dynamically change PDF file based on selection
-          onLoadSuccess={onDocumentLoadSuccess}
-        >
-          {Array.from({ length: numPages }, (_, index) => (
-            <Page
-              key={`page_${index + 1}`}
-              pageNumber={index + 1}
-              renderAnnotationLayer={false}
-              renderTextLayer={false}
-            />
-          ))}
-        </Document>
+        {isPDF && (
+          <Document
+            file={currentFile} // Dynamically change PDF file based on selection
+            onLoadSuccess={onDocumentLoadSuccess}
+          >
+            {Array.from({ length: numPages }, (_, index) => (
+              <Page
+                key={`page_${index + 1}`}
+                pageNumber={index + 1}
+                renderAnnotationLayer={false}
+                renderTextLayer={false}
+              />
+            ))}
+          </Document>
+        )}
+        {isImage && (
+          <img
+            src={currentFile}
+            alt="Selected file"
+            className="w-full h-auto rounded"
+          />
+        )}
       </div>
 
-      {/* Download icon */}
+      {/* Download Icon */}
       <div className="flex justify-between items-center mt-4">
-        <p className="text-left font-bold text-lg">Total Pages: {numPages}</p>
-
+        {isPDF && <p className="text-left font-bold text-lg">Total Pages: {numPages}</p>}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -77,8 +94,8 @@ export const PDFViewer = () => {
           strokeWidth="1.5"
           stroke="currentColor"
           className="cursor-pointer"
-          style={{ width: '20px', height: '20px'}} // Explicit size for the icon
-          onClick={() => handleDownloadPDF(currentPDF)}
+          style={{ width: "20px", height: "20px" }} // Explicit size for the icon
+          onClick={() => handleDownloadFile(currentFile)}
         >
           <path
             strokeLinecap="round"
