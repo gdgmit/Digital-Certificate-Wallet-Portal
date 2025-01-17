@@ -4,13 +4,15 @@ import { Box, Typography, Container, Paper } from "@mui/material";
 import DownloadOptions from "./DownloadOptions";
 import ShareCertificate from "./ShareCertificate";
 import CertificatePreview from "./CertificatePreview";
-import studentsData from "./data/certificate_data.json";
+import jsonData from "../../data/certificate_data.json";
 import "./CertificateDetails.css";
 
 const CertificateDetails = () => {
   const { st_id, cert_id } = useParams();
-  const student = studentsData.find(student => student.st_id === parseInt(st_id));
-  const certificate = student?.certificates.find(cert => cert.cert_id === parseInt(cert_id));
+  // const student = jsonData.find(student => student.st_id === parseInt(st_id));
+  // const certificate = student?.certificates.find(cert => cert.cert_id === parseInt(cert_id));
+  const certificate = jsonData.find(certificate => certificate.cert_id === parseInt(cert_id));
+  const student = certificate?.students.find(st => st.st_id === parseInt(st_id));
 
   if (!student || !certificate) {
     return (

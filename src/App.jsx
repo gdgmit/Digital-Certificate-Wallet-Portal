@@ -4,6 +4,7 @@ import EventCertificateComponent from "./components/CertificateTemplates/EventCe
 import WorkShopCertificateComponent from "./components/CertificateTemplates/WorkShopCertificateComponent";
 import CertificateDetails from "./components/PreviewComponents/CertificateDetails";
 import jsonData from "./data/certificate_data.json";
+import SearchComponent from "./components/Search";
 
 function App() {
   console.log("Student Name:", jsonData[0]);
@@ -38,6 +39,7 @@ function App() {
           }
         />
         <Route path="/certificates/:st_id/:cert_id" element={<CertificateDetails />} />
+        <Route path="/search" element={<SearchComponent />} />
       </Routes>
     </Router>
   );

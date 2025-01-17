@@ -7,6 +7,7 @@
         "students": [
             {
                 "st_id": 1,
+                "certificate_id":123,
                 "st_name": "John",
                 "regno": 1234,
                 "dept": "CT"
@@ -26,6 +27,7 @@
         "students": [
             {
                 "st_id": 1,
+                "certificate_id":456,
                 "st_name": "John",
                 "regno": 1234,
                 "dept": "CT"
@@ -40,6 +42,7 @@
         "students": [
             {
                 "st_id": 2,
+                "certificate_id":789,
                 "st_name": "Michael",
                 "regno": 5678,
                 "dept": "IT"
