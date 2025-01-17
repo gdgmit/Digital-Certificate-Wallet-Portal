@@ -5,6 +5,7 @@ import WorkShopCertificateComponent from "./components/CertificateTemplates/Work
 import CertificateDetails from "./components/PreviewComponents/CertificateDetails";
 import jsonData from "./data/certificate_data.json";
 import SearchComponent from "./components/Search";
+import CertificateValidator from "./components/Search/Validate";
 
 function App() {
   console.log("Student Name:", jsonData[0]);
@@ -38,8 +39,12 @@ function App() {
             />
           }
         />
-        <Route path="/certificates/:st_id/:cert_id" element={<CertificateDetails />} />
+        <Route
+          path="/certificates/:st_id/:cert_id"
+          element={<CertificateDetails />}
+        />
         <Route path="/search" element={<SearchComponent />} />
+        <Route path="/validate" element={<CertificateValidator />} />
       </Routes>
     </Router>
   );
