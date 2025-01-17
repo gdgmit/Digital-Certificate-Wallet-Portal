@@ -3,9 +3,10 @@ import CourseCertificateComponent from "./components/CertificateTemplates/Course
 import EventCertificateComponent from "./components/CertificateTemplates/EventCertificateComponent";
 import WorkShopCertificateComponent from "./components/CertificateTemplates/WorkShopCertificateComponent";
 import CertificateDetails from "./components/PreviewComponents/CertificateDetails";
-import studentsData from "./data/certificate_data.json";
+import jsonData from "./data/certificate_data.json";
 
 function App() {
+  console.log("Student Name:", jsonData[0]);
   return (
     <Router>
       <Routes>
@@ -13,8 +14,8 @@ function App() {
           path="/course"
           element={
             <CourseCertificateComponent
-              certificateData={studentsData[0].certificates[1]}
-              studentName={studentsData[0].st_name}
+              certificateData={jsonData[1]}
+              studentName={jsonData[1].students[0].st_name}
             />
           }
         />
@@ -22,8 +23,8 @@ function App() {
           path="/event"
           element={
             <EventCertificateComponent
-              studentName={studentsData[1].st_name}
-              certificateData={studentsData[1].certificates[0]}
+              studentName={jsonData[2].students[0].st_name}
+              certificateData={jsonData[2]}
             />
           }
         />
@@ -31,8 +32,8 @@ function App() {
           path="/workshop"
           element={
             <WorkShopCertificateComponent
-              studentName={studentsData[0].st_name}
-              certificateData={studentsData[0].certificates[0]}
+              studentName={jsonData[0].students[0].st_name}
+              certificateData={jsonData[0]}
             />
           }
         />
