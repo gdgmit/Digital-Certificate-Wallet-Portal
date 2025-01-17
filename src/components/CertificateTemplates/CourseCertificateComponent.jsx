@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
 const CourseCertificateComponent = ({ studentName, certificateData }) => {
   const [scale, setScale] = useState(1);
@@ -6,7 +6,6 @@ const CourseCertificateComponent = ({ studentName, certificateData }) => {
   const courseName = certificateData.name;
   const date = certificateData.date;
   const skills = certificateData.skills;
-
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
@@ -30,24 +29,24 @@ const CourseCertificateComponent = ({ studentName, certificateData }) => {
   return (
     <div
       ref={certificateRef}
-      style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }}
+      style={{ transform: `scale(${scale})`, transformOrigin: "top left" }}
       className="relative w-[368px] h-[248px] opacity-100 border border-[#1c1c1c] overflow-hidden"
     >
       <div className="absolute top-[16px] left-[16px] w-full h-full">
         <img
-          src="/external/rectangle16448-rw9-400w.png"
+          src="/Digital-Certificate-Wallet-Portal/external/rectangle16448-rw9-400w.png"
           alt="Certificate Background"
           className="w-full h-full"
         />
       </div>
       <div className="absolute top-0 left-0 w-[386px] h-[149px] flex items-start">
         <img
-          src="/external/vector26447-8e4r.svg"
+          src="/Digital-Certificate-Wallet-Portal/external/vector26447-8e4r.svg"
           alt="Vector Decoration"
           className="absolute w-[385px] h-[149px] -left-[2px]"
         />
         <img
-          src="/external/vector16447-7j7n.svg"
+          src="/Digital-Certificate-Wallet-Portal/external/vector16447-7j7n.svg"
           alt="Vector Decoration"
           className="absolute w-[386px] h-[142px]"
         />
@@ -65,7 +64,7 @@ const CourseCertificateComponent = ({ studentName, certificateData }) => {
               {studentName}
             </span>
             <span className="text-[#1c1c1c] text-[8px] opacity-80 leading-[10px] text-center">
-              has successfully completed the course 
+              has successfully completed the course
             </span>
           </div>
         </div>
@@ -93,14 +92,14 @@ const CourseCertificateComponent = ({ studentName, certificateData }) => {
       <div className="absolute top-[32px] right-[16px] flex">
         <div className="relative top-10 left-[65.5px] w-[50px] h-[70px]">
           <img
-            src="/external/subtract6449-ebpi.svg"
+            src="/Digital-Certificate-Wallet-Portal/external/subtract6449-ebpi.svg"
             alt="Seal Decoration"
             className="absolute w-full h-full"
           />
         </div>
         <div className="relative w-[80px] h-[77px]">
           <img
-            src="\external\kisspnggoldsealgoldmedal5a8f4b8c92929616447-lzb5-200h.png"
+            src="\Digital-Certificate-Wallet-Portal/external\kisspnggoldsealgoldmedal5a8f4b8c92929616447-lzb5-200h.png"
             alt="Seal"
             className="absolute w-full h-full"
           />
@@ -109,7 +108,7 @@ const CourseCertificateComponent = ({ studentName, certificateData }) => {
               <span
                 dangerouslySetInnerHTML={{
                   __html:
-                    '<img src="/external/images/gdg_logo.png" alt="GDG Logo" class="w-5 h-5" />',
+                    '<img src="/Digital-Certificate-Wallet-Portal/external/images/gdg_logo.png" alt="GDG Logo" class="w-5 h-5" />',
                 }}
               />
               Certification

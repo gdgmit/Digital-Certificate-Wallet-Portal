@@ -8,12 +8,17 @@ import SearchComponent from "./components/Search";
 import CertificateValidator from "./components/Search/Validate";
 
 function App() {
-  console.log("Student Name:", jsonData[0]);
   return (
-    <Router>
+    <Router
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}
+      basename="/Digital-Certificate-Wallet-Portal"
+    >
       <Routes>
         <Route
-          path="/course"
+          path="course"
           element={
             <CourseCertificateComponent
               certificateData={jsonData[1]}
@@ -22,7 +27,7 @@ function App() {
           }
         />
         <Route
-          path="/event"
+          path="event"
           element={
             <EventCertificateComponent
               studentName={jsonData[2].students[0].st_name}
@@ -31,7 +36,7 @@ function App() {
           }
         />
         <Route
-          path="/workshop"
+          path="workshop"
           element={
             <WorkShopCertificateComponent
               studentName={jsonData[0].students[0].st_name}
@@ -40,11 +45,11 @@ function App() {
           }
         />
         <Route
-          path="/certificates/:st_id/:cert_id"
+          path="certificates/:st_id/:cert_id"
           element={<CertificateDetails />}
         />
-        <Route path="/search" element={<SearchComponent />} />
-        <Route path="/validate" element={<CertificateValidator />} />
+        <Route path="search" element={<SearchComponent />} />
+        <Route path="validate" element={<CertificateValidator />} />
       </Routes>
     </Router>
   );

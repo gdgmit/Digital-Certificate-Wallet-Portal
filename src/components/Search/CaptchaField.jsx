@@ -1,6 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 
-const CaptchaField = ({ onCaptchaChange }) => {
+const CaptchaField = forwardRef(({ onCaptchaChange }, ref) => {
   const [captchaText, setCaptchaText] = useState("");
   const canvasRef = useRef(null);
 
@@ -50,6 +56,11 @@ const CaptchaField = ({ onCaptchaChange }) => {
     if (captchaText) drawCaptcha();
   }, [captchaText]);
 
+  // Expose the `generateCaptcha` method to the parent using the `ref`
+  useImperativeHandle(ref, () => ({
+    refreshCaptcha: generateCaptcha,
+  }));
+
   return (
     <div className="flex items-center space-x-4">
       <canvas ref={canvasRef} className="bg-gray-100 rounded-md shadow-md" />
@@ -63,6 +74,6 @@ const CaptchaField = ({ onCaptchaChange }) => {
       </button>
     </div>
   );
-};
+});
 
 export default CaptchaField;

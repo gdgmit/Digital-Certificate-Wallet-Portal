@@ -11,8 +11,12 @@ const CertificateDetails = () => {
   const { st_id, cert_id } = useParams();
   // const student = jsonData.find(student => student.st_id === parseInt(st_id));
   // const certificate = student?.certificates.find(cert => cert.cert_id === parseInt(cert_id));
-  const certificate = jsonData.find(certificate => certificate.cert_id === parseInt(cert_id));
-  const student = certificate?.students.find(st => st.st_id === parseInt(st_id));
+  const certificate = jsonData.find(
+    (certificate) => certificate.cert_id === parseInt(cert_id)
+  );
+  const student = certificate?.students.find(
+    (st) => st.st_id === parseInt(st_id)
+  );
 
   if (!student || !certificate) {
     return (
@@ -50,11 +54,11 @@ const CertificateDetails = () => {
             </Box>
           )}
           <Box className={isCourse ? "main-content" : "full-content"}>
-            <CertificatePreview image="/assets/sample-certificate.png" />
+            <CertificatePreview image="/Digital-Certificate-Wallet-Portal/assets/sample-certificate.png" />
             <DownloadOptions
               downloadLinks={{
-                png: "/assets/sample-certificate.png",
-                pdf: "/assets/sample-certificate.pdf",
+                png: "/Digital-Certificate-Wallet-Portal/assets/sample-certificate.png",
+                pdf: "/Digital-Certificate-Wallet-Portal/assets/sample-certificate.pdf",
               }}
               className="download"
             />
