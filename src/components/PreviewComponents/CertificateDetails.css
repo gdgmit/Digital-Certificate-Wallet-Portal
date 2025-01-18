@@ -110,17 +110,6 @@
     margin-bottom: 0.8rem;
     font-family: 'Arial', sans-serif; /* Simple sans-serif font for readability */
   }
-  .preview-container {
-    margin: 2rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
   
-  .preview-card {
-    max-width: 600px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
   
   
