@@ -10,7 +10,10 @@
                 "certificate_id":123,
                 "st_name": "John",
                 "regno": 1234,
-                "dept": "CT"
+                "dept": "CT",
+                "phone_no":5689784512,
+                "email_id":"john12@gmail.com",
+                "password":"As$89sJ"
             }
         ]
     },
@@ -30,7 +33,10 @@
                 "certificate_id":456,
                 "st_name": "John",
                 "regno": 1234,
-                "dept": "CT"
+                "dept": "CT",
+                "phone_no":5689784512,
+                "email_id":"john12@gmail.com",
+                "password":"As$89sJ"
             }
         ]
     },
@@ -45,8 +51,16 @@
                 "certificate_id":789,
                 "st_name": "Michael",
                 "regno": 5678,
-                "dept": "IT"
+                "dept": "IT",
+                "phone_no":5689784512,
+                "email_id":"michael34@gmail.com",
+                "password":"gfY#f89"
             }
         ]
     }
 ]
+
+
+
+
+
