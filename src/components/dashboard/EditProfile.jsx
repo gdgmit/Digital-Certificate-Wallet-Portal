@@ -11,16 +11,31 @@ const EditProfile = () => {
     const [originalProfile, setOriginalProfile] = useState(null);
 
     useEffect(() => {
-        const profileData = certificateData.find(
-            (student) => student.st_id.toString() === st_id
-        );
-        if (profileData) {
+        // Extract student data from certificates
+        let studentProfile = null;
+        const studentCertificates = [];
+
+        certificateData.forEach((certificate) => {
+            const student = certificate.students.find(
+                (s) => s.st_id.toString() === st_id
+            );
+            if (student) {
+                studentProfile = student;
+                studentCertificates.push({
+                    ...certificate,
+                    skills: certificate.skills || [],
+                });
+            }
+        });
+
+        if (studentProfile) {
             const formattedProfile = {
-                ...profileData,
-                email: profileData.email_id || "",
-                phone: profileData.phone_no || "",
-                password: profileData.password || "", 
+                ...studentProfile,
+                email: studentProfile.email_id || "",
+                phone: studentProfile.phone_no || "",
+                password: studentProfile.password || "",
                 confirmPassword: "",
+                certificates: studentCertificates,
             };
             setProfile(formattedProfile);
             setOriginalProfile(formattedProfile);
@@ -122,61 +137,53 @@ const EditProfile = () => {
                     </div>
 
                     <div className="mt-6 space-y-6">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            
                         {[{ label: "Name", value: "st_name" },
-  { label: "Registration No", value: "regno" },
-  { label: "Email", value: "email" },
-  { label: "Phone", value: "phone" },
-  { label: "Department", value: "dept" },
-  { label: "Password", value: "password" },
-].map(({ label, value }, index) => (
-  <div key={index}>
-    <label className="block text-sm font-medium text-gray-700">{label}</label>
-    {value === "password" && !editMode ? (
-      <div className="border border-gray-300 rounded-lg px-4 py-2 mt-1 bg-gray-50 text-lg">
-        {profile.password ? "******" : "Not Set"}
-      </div>
-    ) : (
-      <input
-        style={{
-          backgroundColor: editMode ? "white" : "#f0f0f0", 
-        }}
-        type={value === "password" ? "password" : "text"}
-        value={profile[value]}
-        onChange={(e) => handleProfileChange(e, value)}
-        className={`w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none ${
-          editMode ? "focus:ring-2 focus:ring-blue-500" : ""
-        } text-lg`}
-        disabled={!editMode} // Disable the input when not in edit mode
-      />
-    )}
-  </div>
-))}
+                          { label: "Registration No", value: "regno" },
+                          { label: "Email", value: "email" },
+                          { label: "Phone", value: "phone" },
+                          { label: "Department", value: "dept" },
+                          { label: "Password", value: "password" },
+                        ].map(({ label, value }) => (
+                            <div key={value}>
+                                <label className="block text-sm font-medium text-gray-700">
+                                    {label}
+                                </label>
+                                <input
+                                    type={value === "password" ? "password" : "text"}
+                                    value={profile[value]}
+                                    onChange={(e) => handleProfileChange(e, value)}
+                                    className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    disabled={!editMode}
+                                />
+                            </div>
+                        ))}
 
-                            {editMode && profile.password && (
+                        {editMode && (
+                            <>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700">
                                         Confirm Password
                                     </label>
                                     <input
-                                     style={{backgroundColor:"white"}}
                                         type="password"
                                         value={profile.confirmPassword}
                                         onChange={(e) => handleProfileChange(e, "confirmPassword")}
-                                        className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
+                                        className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     />
-                                    {confirmPasswordError && (
-                                        <p className="text-red-500 text-sm mt-1">{confirmPasswordError}</p>
-                                    )}
                                 </div>
-                            )}
-                            {passwordError && (
-                                <p className="text-red-500 text-sm mt-1">{passwordError}</p>
-                            )}
-                        </div>
+                                {confirmPasswordError && (
+                                    <p className="text-red-500 text-sm mt-1">
+                                        {confirmPasswordError}
+                                    </p>
+                                )}
+                                {passwordError && (
+                                    <p className="text-red-500 text-sm mt-1">{passwordError}</p>
+                                )}
+                            </>
+                        )}
                     </div>
                 </div>
+
                 <div className="mt-8 p-6 bg-green-50 border border-green-200 rounded-lg">
                     <h2 className="text-xl font-bold text-green-800">
                         🎉 Congratulations on your recent certificate!
@@ -193,6 +200,7 @@ const EditProfile = () => {
                         </p>
                     </div>
                 </div>
+
                 <div className="mt-8">
                     <h2 className="text-2xl font-bold text-gray-800">Certificates</h2>
                     <div className="grid gap-6 mt-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -213,12 +221,9 @@ const EditProfile = () => {
                                 {cert.skills && cert.skills.length > 0 && (
                                     <div className="mt-4">
                                         <h4 className="text-sm font-bold text-gray-700">Skills:</h4>
-                                        <ul className="mt-2 list-disc list-inside space-y-1 text-sm">
-                                            {cert.skills.map((skill, index) => (
-                                                <li
-                                                    key={index}
-                                                    className="px-2 py-1 bg-blue-100 text-blue-600 rounded-md"
-                                                >
+                                        <ul className="mt-2 list-disc list-inside space-y-1">
+                                            {cert.skills.map((skill, idx) => (
+                                                <li key={idx} className="text-sm text-gray-600">
                                                     {skill}
                                                 </li>
                                             ))}
