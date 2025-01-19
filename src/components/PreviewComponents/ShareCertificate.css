@@ -1,0 +1,16 @@
+.share-buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .share-button {
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .share-button:hover {
+    transform: scale(1.1);
+  }
+  

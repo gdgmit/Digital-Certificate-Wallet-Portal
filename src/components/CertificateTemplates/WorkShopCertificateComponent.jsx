@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const WorkShopCertificateComponent = ({ studentName,certificateData }) => {
+const WorkShopCertificateComponent = ({ studentName, certificateData }) => {
   const [scale, setScale] = useState(1);
   const certificateRef = useRef(null);
   const workshopName = certificateData.name;
@@ -33,105 +33,105 @@ const WorkShopCertificateComponent = ({ studentName,certificateData }) => {
     >
       <div className="absolute top-0 left-0 w-[400px] h-[72.25px] flex items-start flex-shrink-1">
         <img
-          src="/external/vector338311-tra3.svg"
+          src="/Digital-Certificate-Wallet-Portal/external/vector338311-tra3.svg"
           alt="Vector338311"
           className="absolute top-[1.16px] left-[286.7px] w-[113px] h-[71px]"
         />
         <img
-          src="/external/vector328311-ltrt7.svg"
+          src="/Digital-Certificate-Wallet-Portal/external/vector328311-ltrt7.svg"
           alt="Vector328311"
           className="absolute top-[1.16px] left-[161.27px] w-[181px] h-[35px]"
         />
         <img
-          src="/external/vector318311-8a4b.svg"
+          src="/Digital-Certificate-Wallet-Portal/external/vector318311-8a4b.svg"
           alt="Vector318311"
           className="absolute top-[33.53px] left-[13.87px] w-[42px] h-[14px]"
         />
         <img
-          src="/external/vector308311-egvn.svg"
+          src="/Digital-Certificate-Wallet-Portal/external/vector308311-egvn.svg"
           alt="Vector308311"
           className="absolute top-0 left-0 w-[38px] h-[51px]"
         />
         <img
-          src="/external/vector288311-k1a.svg"
+          src="/Digital-Certificate-Wallet-Portal/external/vector288311-k1a.svg"
           alt="Vector288311"
           className="absolute top-[1.16px] left-[1.16px] w-[161px] h-[43px]"
         />
         <img
-          src="/external/vector298311-rfhs.svg"
+          src="/Digital-Certificate-Wallet-Portal/external/vector298311-rfhs.svg"
           alt="Vector298311"
           className="absolute top-[1.16px] left-[59.54px] w-[101px] h-[44px]"
         />
       </div>
       <div className="absolute top-[237.74px] left-0 w-[400px] h-[42.26px] flex items-start flex-shrink-1">
         <img
-          src="/external/vector398311-cvf.svg"
+          src="/Digital-Certificate-Wallet-Portal/external/vector398311-cvf.svg"
           alt="Vector398311"
           className="absolute top-[11px] left-0 w-[129px] h-[29px]"
         />
         <img
-          src="/external/vector388311-qf3q.svg"
+          src="/Digital-Certificate-Wallet-Portal/external/vector388311-qf3q.svg"
           alt="Vector388311"
           className="absolute top-[11px] left-[0.58px] w-[159px] h-[31px]"
         />
         <img
-          src="/external/vector378311-39x.svg"
+          src="/Digital-Certificate-Wallet-Portal/external/vector378311-39x.svg"
           alt="Vector378311"
           className="absolute top-0 left-[1.16px] w-[27px] h-[18px]"
         />
         <img
-          src="/external/vector368311-2l7m.svg"
+          src="/Digital-Certificate-Wallet-Portal/external/vector368311-2l7m.svg"
           alt="Vector368311"
           className="absolute top-[15.05px] left-[166.71px] w-[107px] h-[27px]"
         />
         <img
-          src="/external/vector358311-0hwg.svg"
+          src="/Digital-Certificate-Wallet-Portal/external/vector358311-0hwg.svg"
           alt="Vector358311"
           className="absolute top-[8.1px] left-[307.96px] w-[92px] h-[15px]"
         />
         <img
-          src="/external/vector348311-64ya.svg"
+          src="/Digital-Certificate-Wallet-Portal/external/vector348311-64ya.svg"
           alt="Vector348311"
           className="absolute top-[6.95px] left-[252.97px] w-[147px] h-[35px]"
         />
       </div>
       <img
-        src="/external/polygon108311-dmkn.svg"
+        src="/Digital-Certificate-Wallet-Portal/external/polygon108311-dmkn.svg"
         alt="Polygon108311"
         className="absolute top-[137.59px] left-[16.2px] w-[49px] h-[41px]"
       />
       <img
-        src="/external/polygon118311-bloh.svg"
+        src="/Digital-Certificate-Wallet-Portal/external/polygon118311-bloh.svg"
         alt="Polygon118311"
         className="absolute top-[85.33px] left-[66.45px] w-[24px] h-[20px]"
       />
       <img
-        src="/external/polygon128311-w0g.svg"
+        src="/Digital-Certificate-Wallet-Portal/external/polygon128311-w0g.svg"
         alt="Polygon128311"
         className="absolute top-[63.77px] left-[-7.83px] w-[24px] h-[20px]"
       />
       <img
-        src="/external/polygon138312-jgzh.svg"
+        src="/Digital-Certificate-Wallet-Portal/external/polygon138312-jgzh.svg"
         alt="Polygon138312"
         className="absolute top-[122.21px] left-[367.88px] w-[16px] h-[14px]"
       />
       <img
-        src="/external/polygon178312-z6zh.svg"
+        src="/Digital-Certificate-Wallet-Portal/external/polygon178312-z6zh.svg"
         alt="Polygon178312"
         className="absolute top-[162.21px] left-[307.88px] w-[16px] h-[14px]"
       />
       <img
-        src="/external/polygon148312-jl4c.svg"
+        src="/Digital-Certificate-Wallet-Portal/external/polygon148312-jl4c.svg"
         alt="Polygon148312"
         className="absolute top-[224.24px] left-[360.51px] w-[16px] h-[14px]"
       />
       <img
-        src="/external/polygon158312-tx8.svg"
+        src="/Digital-Certificate-Wallet-Portal/external/polygon158312-tx8.svg"
         alt="Polygon158312"
         className="absolute top-[70.3px] left-[311.79px] w-[20px] h-[17px]"
       />
       <img
-        src="/external/polygon168312-lytg.svg"
+        src="/Digital-Certificate-Wallet-Portal/external/polygon168312-lytg.svg"
         alt="Polygon168312"
         className="absolute top-[196.37px] left-[63.08px] w-[20px] h-[17px]"
       />
@@ -175,7 +175,7 @@ const WorkShopCertificateComponent = ({ studentName,certificateData }) => {
                   {studentName}
                 </span>
                 <img
-                  src="/external/line148312-d2rm.svg"
+                  src="/Digital-Certificate-Wallet-Portal/external/line148312-d2rm.svg"
                   alt="Line148312"
                   className="w-[160px] h-[1px]"
                 />
@@ -205,7 +205,7 @@ const WorkShopCertificateComponent = ({ studentName,certificateData }) => {
           <div className="flex gap-[80px] self-center">
             <div className="flex gap-1 items-center flex-col">
               <img
-                src="/external/line18311-587r.svg"
+                src="/Digital-Certificate-Wallet-Portal/external/line18311-587r.svg"
                 alt="Line18311"
                 className="w-[80px] h-[1px]"
               />
@@ -228,7 +228,7 @@ const WorkShopCertificateComponent = ({ studentName,certificateData }) => {
                 <span
                   dangerouslySetInnerHTML={{
                     __html:
-                      '<img src="/external/images/gdg_logo.png" alt="GDG Logo" class="w-5 h-5" />',
+                      '<img src="/Digital-Certificate-Wallet-Portal/external/images/gdg_logo.png" alt="GDG Logo" class="w-5 h-5" />',
                   }}
                 />
                 Certification
