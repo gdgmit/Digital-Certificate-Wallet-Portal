@@ -2,8 +2,10 @@ import React, { useState, useRef } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CaptchaField from "./CaptchaField";
+import { useNavigate } from "react-router-dom";
 
 const CertificateValidator = () => {
+  const navigate = useNavigate();
   const [event, setEvent] = useState("");
   const [studentId, setStudentId] = useState("");
   const [certificateId, setCertificateId] = useState("");
@@ -29,7 +31,7 @@ const CertificateValidator = () => {
       return;
     }
 
-    toast.success("Certificate validated successfully!");
+    navigate(`/certificates/${studentId}/${event}`); // Redirect to the certificate page
   };
 
   return (
@@ -76,9 +78,9 @@ const CertificateValidator = () => {
                   className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 >
                   <option value="">Choose an event</option>
-                  <option value="Event1">Event 1</option>
-                  <option value="Event2">Event 2</option>
-                  <option value="Event3">Event 3</option>
+                  <option value="2">GenAI Study Jam</option>
+                  <option value="3">Event 2</option>
+                  <option value="1">Event 3</option>
                 </select>
               </div>
 
@@ -154,8 +156,6 @@ const CertificateValidator = () => {
           </form>
         </div>
       </div>
-
-      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };

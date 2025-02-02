@@ -6,8 +6,11 @@ import CertificateDetails from "./components/PreviewComponents/CertificateDetail
 import jsonData from "./data/certificate_data.json";
 import SearchComponent from "./components/Search";
 import CertificateValidator from "./components/Search/Validate";
+
 import EditProfile from "./components/Dashboard/EditProfile";
-import studentsData from "./data/certificate_data.json";
+
+import { ToastContainer } from "react-toastify";
+
 function App() {
   return (
     <Router
@@ -18,6 +21,7 @@ function App() {
       basename="/Digital-Certificate-Wallet-Portal"
     >
       <Routes>
+        <Route path="/" element={<CertificateValidator />} />
         <Route
           path="course"
           element={
@@ -53,6 +57,8 @@ function App() {
         <Route path="validate" element={<CertificateValidator />} />
         <Route path="Dashboard/editprofile/:st_id" element={<EditProfile />} />
       </Routes>
+
+      <ToastContainer position="top-right" autoClose={3000} />
     </Router>
   );
 }
