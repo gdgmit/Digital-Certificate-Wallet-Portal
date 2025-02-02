@@ -6,7 +6,8 @@ import CertificateDetails from "./components/PreviewComponents/CertificateDetail
 import jsonData from "./data/certificate_data.json";
 import SearchComponent from "./components/Search";
 import CertificateValidator from "./components/Search/Validate";
-import Certificate from "./components/CertificateTemplates/GenAICertificateComponent";
+
+import EditProfile from "./components/Dashboard/EditProfile";
 
 import { ToastContainer } from "react-toastify";
 
@@ -54,6 +55,7 @@ function App() {
         />
         <Route path="search" element={<SearchComponent />} />
         <Route path="validate" element={<CertificateValidator />} />
+        <Route path="Dashboard/editprofile/:st_id" element={<EditProfile />} />
       </Routes>
 
       <ToastContainer position="top-right" autoClose={3000} />
