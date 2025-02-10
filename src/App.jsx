@@ -6,7 +6,7 @@ import CertificateDetails from "./components/PreviewComponents/CertificateDetail
 import jsonData from "./data/certificate_data.json";
 import SearchComponent from "./components/Search";
 import CertificateValidator from "./components/Search/Validate";
-
+import ListOfCertificates from "./components/CertificatesList/certificatesPage";
 import EditProfile from "./components/Dashboard/EditProfile";
 
 import { ToastContainer } from "react-toastify";
@@ -48,6 +48,10 @@ function App() {
               certificateData={jsonData[0]}
             />
           }
+        />
+        <Route
+          path="certificates/:st_id"
+          element={<ListOfCertificates/>}
         />
         <Route
           path="certificates/:st_id/:cert_id"
