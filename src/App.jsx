@@ -55,7 +55,7 @@ function App() {
         />
         <Route path="search" element={<SearchComponent />} />
         <Route path="validate" element={<CertificateValidator />} />
-        <Route path="Dashboard/editprofile/:st_id" element={<EditProfile />} />
+        <Route path="dashboard/:st_id" element={<EditProfile />} />
       </Routes>
 
       <ToastContainer position="top-right" autoClose={3000} />
