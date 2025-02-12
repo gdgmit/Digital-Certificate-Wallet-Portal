@@ -50,11 +50,11 @@ function App() {
           }
         />
         <Route
-          path="certificates/:st_id"
+          path="certificatesPage/:st_id"
           element={<ListOfCertificates/>}
         />
         <Route
-          path="certificates/:st_id/:cert_id"
+          path="certificate/:st_id/:cert_id"
           element={<CertificateDetails />}
         />
         <Route path="search" element={<SearchComponent />} />
