@@ -21,7 +21,7 @@ export const Navbar = () => {
             <img
                 src="/Digital-Certificate-Wallet-Portal/assets/gdgoc-logo.png"
                 alt="MIT Logo"
-                className="h-10 mr-1"
+                className="h-20 mr-2"
             />
             <span className="text-2xl font-bold">Digital Certificate Wallet</span>
         </div>
