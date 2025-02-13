@@ -12,8 +12,10 @@ function App() {
       }}
       basename="/Digital-Certificate-Wallet-Portal"
     >
+
       <Navbar />
       <AppRoutes />
+         
       <ToastContainer position="top-right" autoClose={3000} />
     </Router>
   );
