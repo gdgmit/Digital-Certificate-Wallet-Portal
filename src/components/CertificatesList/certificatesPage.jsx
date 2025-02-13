@@ -9,21 +9,21 @@ import WorkShopCertificateComponent from "../CertificateTemplates/WorkShopCertif
 import GenAICertificate from "../CertificateTemplates/GenAICertificateComponent";
 import CourseCertificateComponent from "../CertificateTemplates/CourseCertificateComponent";
 
-const Navbar = ({ showMenu }) => (
-  <nav
-    className={`fixed top-0 left-0 h-full w-64 bg-white shadow-md transform transition-transform duration-300 ${
-      showMenu ? "translate-x-0" : "-translate-x-full"
-    } hover:translate-x-0`}
-  >
-    <ul className="space-y-6 text-center mt-20">
-      <li>
-        <a href="#" className="text-blue-900 font-semibold text-xl">
-          My Certificates
-        </a>
-      </li>
-    </ul>
-  </nav>
-);
+// const Navbar = ({ showMenu }) => (
+//   <nav
+//     className={`fixed top-0 left-0 h-full w-64 bg-white shadow-md transform transition-transform duration-300 ${
+//       showMenu ? "translate-x-0" : "-translate-x-full"
+//     } hover:translate-x-0`}
+//   >
+//     <ul className="space-y-6 text-center mt-20">
+//       <li>
+//         <a href="#" className="text-blue-900 font-semibold text-xl">
+//           My Certificates
+//         </a>
+//       </li>
+//     </ul>
+//   </nav>
+// );
 
 const ListOfCertificates = () => {
   const { st_id } = useParams();
@@ -111,7 +111,7 @@ const ListOfCertificates = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center relative">
       {/* Header */}
-      <header className="flex items-center justify-between p-4 bg-white shadow-md fixed top-0 left-0 right-0 z-50 w-full">
+      {/* <header className="flex items-center justify-between p-4 bg-white shadow-md fixed top-0 left-0 right-0 z-50 w-full">
         <div className="flex items-center">
           <button
             className="p-2 text-[#0A8EE0] hover:text-[#0A8EE0] focus:outline-none"
@@ -122,10 +122,10 @@ const ListOfCertificates = () => {
           </button>
           <h1 className="text-2xl font-bold text-[#0A8EE0] ml-4">GDG-MIT</h1>
         </div>
-      </header>
+      </header> */}
 
       {/* Navbar */}
-      <Navbar showMenu={showMenu} />
+      {/* <Navbar showMenu={showMenu} /> */}
 
       {/* Main Content */}
       <div
@@ -148,7 +148,7 @@ const ListOfCertificates = () => {
               key={certificate.cert_id}
               className="relative bg-white border border-gray-300 rounded-lg shadow-md w-[600px] h-[500px] flex flex-col items-center justify-center cursor-pointer"
               onClick={() =>
-                navigate(`/certificate/${st_id}/${certificate.cert_id}`)
+                navigate(`/certificates/${st_id}/${certificate.cert_id}`)
               }
             >
               {/* Hidden Certificate Component for Image Generation */}
