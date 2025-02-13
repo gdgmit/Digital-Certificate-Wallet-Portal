@@ -31,7 +31,7 @@ const CertificateValidator = () => {
       return;
     }
 
-    navigate(`/certificatesPage/${studentId}`); // Redirect to the certificate page
+    navigate(`/certificates/${studentId}`); // Redirect to the certificate page
   };
 
   return (
