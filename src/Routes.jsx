@@ -8,6 +8,7 @@ import SearchComponent from "./components/Search";
 import CertificateValidator from "./components/Search/Validate";
 import ListOfCertificates from "./components/CertificatesList/certificatesPage";
 import EditProfile from "./components/Dashboard/EditProfile";
+import LoginPage from "./components/Login/LoginPage"; 
 
 const AppRoutes = () => {
   return (
@@ -40,6 +41,7 @@ const AppRoutes = () => {
           />
         }
       />
+      <Route path="login" element={<LoginPage />} />
       <Route path="certificates/:st_id" element={<ListOfCertificates />} />
       <Route path="certificates/:st_id/:cert_id" element={<CertificateDetails />} />
       <Route path="search" element={<SearchComponent />} />
