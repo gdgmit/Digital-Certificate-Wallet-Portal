@@ -164,13 +164,17 @@ const CertificateDetails = () => {
             </div>
 
             {/* Certificate Preview */}
-            {certificateImage && (
-              <img
-                src={certificateImage}
-                alt="Certificate Preview"
-                className="w-full max-w-md rounded-md shadow-md mb-4"
-              />
-            )}
+            {certificateImage ? (
+  <a href={certificateImage} target="_blank" rel="noopener noreferrer">
+    <img
+      src={certificateImage}
+      alt="Certificate Preview"
+      className="w-full max-w-md rounded-md shadow-lg mb-4 cursor-pointer"
+    />
+  </a>
+) : (
+  <p className="text-lg text-gray-600">Loading certificate preview...</p>
+)}
 
             {/* Download and Share Options */}
             <div className="flex flex-col items-center space-y-4">
