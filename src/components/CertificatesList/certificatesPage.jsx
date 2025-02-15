@@ -153,7 +153,7 @@ const ListOfCertificates = () => {
                 <div className="px-3 py-1 bg-white bg-opacity-70 text-blue-700 text-center text-sm sm:text-lg font-semibold z-10 max-w-xs mx-auto">
                   {certificate.name}
                 </div>
-               { console.log("All certificate images:", certificateImages)}
+               {/* { console.log("All certificate images:", certificateImages)} */}
 
                 
                 {/* Main Content: Certificate Preview */}
