@@ -204,7 +204,7 @@ const CertificateDetails = () => {
             empowers you with the knowledge and tools to excel in today's
             fast-paced, tech-driven world.
           </p>
-
+          {certificate.skills && <>
           <h3 className="text-xl font-semibold text-gray-800 mb-3">
             🌟 What You Learned
           </h3>
@@ -229,6 +229,7 @@ const CertificateDetails = () => {
               </span>
             ))}
           </div>
+            </>}
         </div>
       </div>
     </div>

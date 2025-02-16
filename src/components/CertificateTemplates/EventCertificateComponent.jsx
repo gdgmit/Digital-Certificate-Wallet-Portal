@@ -27,13 +27,14 @@ const EventCertificateComponent = ({ studentName, certificateData }) => {
 
   return (
     <div
-      ref={certificateRef}
+
       style={{
         transform: `scale(${scale})`,
         transformOrigin: "top left",
       }}
       className="relative w-full max-w-[404px] h-auto flex flex-col items-center justify-center"
     >
+      <div ref={certificateRef} className="w-[404px] h-[280px] relative">
       <img
         src="/Digital-Certificate-Wallet-Portal/external/rectangle16449-emxc-400w.png"
         alt="Rectangle16449"
@@ -156,6 +157,7 @@ const EventCertificateComponent = ({ studentName, certificateData }) => {
                   Event
                 </span>
               </span>
+              </div>
             </div>
           </div>
         </div>
