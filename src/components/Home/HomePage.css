@@ -1,0 +1,26 @@
+/* Typing animation effect */
+@keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  .typing-effect {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid #fff; /* Cursor */
+    font-size: 2rem;
+    font-weight: 700;
+    animation: typing 4s steps(30) 1s 1 normal both, blink 0.75s step-end infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
