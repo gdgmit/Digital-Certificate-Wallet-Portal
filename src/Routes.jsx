@@ -9,11 +9,12 @@ import CertificateValidator from "./components/Search/Validate";
 import ListOfCertificates from "./components/CertificatesList/certificatesPage";
 import EditProfile from "./components/Dashboard/EditProfile";
 import LoginPage from "./components/Login/LoginPage"; 
+import HomePage from "./components/Home/HomePage"; // Import HomePage
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<CertificateValidator />} />
+      <Route path="/" element={<HomePage/>} />
       <Route
         path="course"
         element={
