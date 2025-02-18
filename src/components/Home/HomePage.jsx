@@ -19,7 +19,7 @@ const features = [
 ];
 
 const HomePage = () => {
-  const fullText = "Welcome to the Digital Certificate Portal";
+  const fullText = "Welcome to the Digital Certificate Wallet Portal";
   const [typedText, setTypedText] = useState("");
 
   useEffect(() => {
@@ -63,17 +63,17 @@ transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
 >
 
   {/* Fixed height for consistent layout */}
-  <div className="h-20 flex items-center">
+  <div className="h-20 flex items-center justify-center px-4 sm:px-0">
   <motion.h1 
-  className="text-5xl sm:text-5xl font-extrabold text-white tracking-wide mt-4 mb-6"
-  initial={{ opacity: 0 }} 
-  animate={{ opacity: 1 }} 
-  transition={{ delay: 1, duration: 1 }}
->
-  <span className="text-blue-400">{typedText}</span>
-</motion.h1>
+    className="text-3xl sm:text-5xl font-extrabold text-white tracking-wide mt-2 sm:mt-4 mb-4 sm:mb-6 text-center"
+    initial={{ opacity: 0 }} 
+    animate={{ opacity: 1 }} 
+    transition={{ delay: 1, duration: 1 }}
+  >
+    <span className="text-blue-400">{typedText}</span>
+  </motion.h1>
+</div>
 
-  </div>
   
 </motion.div>
 <motion.p 
@@ -86,7 +86,7 @@ transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
 </motion.p>
 
 <motion.a 
-  href="/validate" 
+  href="/Digital-Certificate-Wallet-Portal/validate" 
   className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold text-lg shadow-lg hover:bg-blue-700 transition duration-200 transform hover:scale-110"
   whileTap={{ scale: 0.9 }}
 >
