@@ -21,14 +21,14 @@ const CertificateDetails = () => {
   const [certificateImage, setCertificateImage] = useState(null);
   const [pdfBlobUrl, setPdfBlobUrl] = useState(null);
   const templateRef = useRef(null);
-
-  // Validate and extract certificate and student
+  
   const certificate = jsonData.find(
     (certificate) => certificate.cert_id === parseInt(cert_id)
   );
   const student = certificate?.students.find((st) => st.st_id === st_id);
 
   useEffect(() => {
+
     if (!certificate || !student) {
       toast.error("Invalid certificate or student ID. Please try again.");
       navigate("/"); // Redirect to the home page
@@ -168,13 +168,17 @@ const CertificateDetails = () => {
             </div>
 
             {/* Certificate Preview */}
-            {certificateImage && (
-              <img
-                src={certificateImage}
-                alt="Certificate Preview"
-                className="w-full max-w-md rounded-md shadow-md mb-4"
-              />
-            )}
+            {certificateImage ? (
+  <a href={certificateImage} target="_blank" rel="noopener noreferrer">
+    <img
+      src={certificateImage}
+      alt="Certificate Preview"
+      className="w-full max-w-md rounded-md shadow-lg mb-4 cursor-pointer"
+    />
+  </a>
+) : (
+  <p className="text-lg text-gray-600">Loading certificate preview...</p>
+)}
 
             {/* Download and Share Options */}
             <div className="flex flex-col items-center space-y-4">
@@ -184,7 +188,7 @@ const CertificateDetails = () => {
                   pdf: pdfBlobUrl,
                 }}
               />
-              <ShareCertificate shareUrl="https://yourwebsite.com/certificates" />
+              <ShareCertificate shareUrl={window.location.href} />
             </div>
           </div>
         </div>
