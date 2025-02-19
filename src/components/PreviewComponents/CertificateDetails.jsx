@@ -11,6 +11,9 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GlobeIcon from "@mui/icons-material/Public";
 
 const CertificateDetails = () => {
   const navigate = useNavigate();
@@ -108,33 +111,34 @@ const CertificateDetails = () => {
               continuous learning and excellence.
             </p>
             <p className="text-gray-700 text-md mb-6">
-              We encourage you to share this success with your network and
-              inspire others to embark on their learning journeys. 🚀
+              Keep up the good work, and continue to strive for success in your
+              future endeavors! 🚀 Connect with us on
             </p>
             <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:gap-4 mt-6">
               <a
-                href="https://facebook.com"
+                href="https://gdg.community.dev/gdg-on-campus-madras-institute-of-technology-chennai-india/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 flex items-center justify-center"
               >
-                🌐 Facebook
+                <GlobeIcon sx={{ mr: 2 }} /> Community
               </a>
               <a
-                href="https://twitter.com"
+                href="https://instagram.com/gdg.mit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-400 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-500 flex items-center justify-center"
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-500 flex items-center justify-center"
               >
-                🐦 Twitter
+                <InstagramIcon sx={{ mr: 2 }} />
+                Instagram
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/gdg-mit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-700 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-800 flex items-center justify-center"
               >
-                💼 LinkedIn
+                <LinkedInIcon sx={{ mr: 2 }} /> LinkedIn
               </a>
             </div>
           </div>
@@ -184,48 +188,51 @@ const CertificateDetails = () => {
             </div>
           </div>
         </div>
+
         {/* Certificate Details */}
         {/* Content Section: Course Details */}
-        <div className="mt-8 bg-gray-50 p-6 rounded-md shadow-md">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            About the Course: {certificate.name}
-          </h2>
-          <p className="text-gray-700 text-md mb-6">
-            The{" "}
-            <span className="font-semibold text-indigo-600">
-              {certificate.name}
-            </span>{" "}
-            is a comprehensive program designed to help learners develop skills
-            in cutting-edge technologies and practical applications. This course
-            empowers you with the knowledge and tools to excel in today's
-            fast-paced, tech-driven world.
-          </p>
+        {certificate.category === "course" && (
+          <div className="mt-8 bg-gray-50 p-6 rounded-md shadow-md">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+              About the Course: {certificate.name}
+            </h2>
+            <p className="text-gray-700 text-md mb-6">
+              The{" "}
+              <span className="font-semibold text-indigo-600">
+                {certificate.name}
+              </span>{" "}
+              is a comprehensive program designed to help learners develop
+              skills in cutting-edge technologies and practical applications.
+              This course empowers you with the knowledge and tools to excel in
+              today's fast-paced, tech-driven world.
+            </p>
 
-          <h3 className="text-xl font-semibold text-gray-800 mb-3">
-            🌟 What You Learned
-          </h3>
-          <ul className="list-disc list-inside text-gray-700 mb-6">
-            {certificate.skills.map((skill, index) => (
-              <li key={index} className="mb-2">
-                {skill}
-              </li>
-            ))}
-          </ul>
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">
+              🌟 What You Learned
+            </h3>
+            <ul className="list-disc list-inside text-gray-700 mb-6">
+              {certificate.skills.map((skill, index) => (
+                <li key={index} className="mb-2">
+                  {skill}
+                </li>
+              ))}
+            </ul>
 
-          <h3 className="text-xl font-semibold text-gray-800 mb-3">
-            🏅 Skills Earned
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {certificate.skills.map((skill, index) => (
-              <span
-                key={index}
-                className="bg-indigo-600 text-white text-sm font-medium py-1 px-3 rounded-full shadow-md"
-              >
-                {skill}
-              </span>
-            ))}
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">
+              🏅 Skills Earned
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {certificate.skills.map((skill, index) => (
+                <span
+                  key={index}
+                  className="bg-indigo-600 text-white text-sm font-medium py-1 px-3 rounded-full shadow-md"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

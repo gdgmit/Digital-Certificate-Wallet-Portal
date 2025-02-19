@@ -78,9 +78,8 @@ const CertificateValidator = () => {
                   className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 >
                   <option value="">Choose an event</option>
-                  <option value="2">GenAI Study Jam</option>
-                  <option value="3">Event 2</option>
-                  <option value="1">Event 3</option>
+                  <option value="2">GenAI Study Jam Appreciation</option>
+                  <option value="3">GenAI Study Jam Participation</option>
                 </select>
               </div>
 

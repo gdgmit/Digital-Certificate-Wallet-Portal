@@ -113,6 +113,11 @@ const Certificate = ({ certificate, student }) => {
             {/* Signature Section */}
             <div className="flex justify-between mt-8">
               <div className="text-center">
+                <img
+                  src="/Digital-Certificate-Wallet-Portal/assets/signature/staff-kottilingam.png"
+                  alt="Signature"
+                  className="h-16"
+                />
                 <p className="font-bold border-t border-gray-500 pt-2">
                   Faculty Incharge
                 </p>
@@ -120,16 +125,28 @@ const Certificate = ({ certificate, student }) => {
                 <p className="text-gray-600 text-sm">Assistant Professor</p>
               </div>
               <div className="text-center">
+                <img
+                  src="/Digital-Certificate-Wallet-Portal/assets/signature/vijai-sign.png"
+                  alt="Signature"
+                  className="h-16"
+                />
                 <p className="font-bold border-t border-gray-500 pt-2">
                   Organizer
                 </p>
-                <p className="text-gray-700">Vijai Suria</p>
+                <p className="text-gray-700">Mr. Vijai Suria</p>
+                <p className="text-gray-600 text-sm">Chapter Lead</p>
               </div>
               <div className="text-center">
+                <img
+                  src="/Digital-Certificate-Wallet-Portal/assets/signature/usha-ai.png"
+                  alt="Signature"
+                  className="h-16"
+                />
                 <p className="font-bold border-t border-gray-500 pt-2">
                   Facilitator
                 </p>
-                <p className="text-gray-700">Usha Nandini</p>
+                <p className="text-gray-700">Ms. Usha Nandhini</p>
+                <p className="text-gray-600 text-sm">AI & ML Innovation Lead</p>
               </div>
             </div>
 

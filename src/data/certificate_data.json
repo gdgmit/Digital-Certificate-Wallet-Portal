@@ -672,8 +672,8 @@
   {
     "cert_id": 3,
     "category": "event",
-    "name": "GenAI Participation",
-    "date": "12-11-2024",
+    "name": "GenAI Study Jam",
+    "date": "23-01-2025",
     "students": [
       {
         "st_id": "4a33e68a-642c-48ff-b444-211e1bd23b7f",
@@ -2043,7 +2043,7 @@
     "date": "13-11-2024",
     "students": [
       {
-        "st_id": 2,
+        "st_id": "2",
         "certificate_id": 789,
         "st_name": "Michael",
         "regno": 5678,
