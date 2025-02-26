@@ -37,7 +37,8 @@ export const Navbar = () => {
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to={`/certificates/${studentId}`}>My Certificates</NavLink>
+          {/* <NavLink to={`/certificates/${studentId}`}>My Certificates</NavLink> */}
+          <NavLink className="disabled-link">My Certificates</NavLink>
         </li>
         <li>
           <NavLink to="/validate">Search</NavLink>
@@ -46,11 +47,20 @@ export const Navbar = () => {
           <NavLink to="/validate">Validate</NavLink>
         </li> */}
         <li>
-          <NavLink to={`/dashboard/${studentId}`}>Dashboard</NavLink>
+          {/* <NavLink to={`/dashboard/${studentId}`}>Dashboard</NavLink> */}
+          <NavLink className="disabled-link">Dashboard</NavLink>
         </li>
-        {isAuthenticated ? (<li><button onClick={handleLogout}>Logout</button></li>
-    ) : ( <li><NavLink to="/login">Login</NavLink></li>)} 
-       
+        {/* {isAuthenticated ? (<li><button onClick={handleLogout}>Logout</button></li>
+    ) : ( <li><NavLink to="/login">Login</NavLink></li>)}  */}
+        {isAuthenticated ? (
+          <li>
+            <button onClick={handleLogout}>Logout</button>
+          </li>
+        ) : (
+          <li>
+            <NavLink className="disabled-link">Login</NavLink>
+          </li>
+        )}
       </ul>
     </nav>
   );
